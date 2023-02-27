@@ -1,0 +1,289 @@
+Script started on 2023-02-24 16:05:44+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ ls
+[?2004lmy_unix_session
+[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ ls -F
+[?2004lmy_unix_session
+[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ LS [K[K[Kls --help
+[?2004lUsage: ls [OPTION]... [FILE]...
+List information about the FILEs (the current directory by default).
+Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --all                  do not ignore entries starting with .
+  -A, --almost-all           do not list implied . and ..
+      --author               with -l, print the author of each file
+  -b, --escape               print C-style escapes for nongraphic characters
+      --block-size=SIZE      with -l, scale sizes by SIZE when printing them;
+                               e.g., '--block-size=M'; see SIZE format below
+  -B, --ignore-backups       do not list implied entries ending with ~
+  -c                         with -lt: sort by, and show, ctime (time of last
+                               modification of file status information);
+                               with -l: show ctime and sort by name;
+                               otherwise: sort by ctime, newest first
+  -C                         list entries by columns
+      --color[=WHEN]         colorize the output; WHEN can be 'always' (default
+                               if omitted), 'auto', or 'never'; more info below
+  -d, --directory            list directories themselves, not their contents
+  -D, --dired                generate output designed for Emacs' dired mode
+  -f                         do not sort, enable -aU, disable -ls --color
+  -F, --classify             append indicator (one of */=>@|) to entries
+      --file-type            likewise, except do not append '*'
+      --format=WORD          across -x, commas -m, horizontal -x, long -l,
+                               single-column -1, verbose -l, vertical -C
+      --full-time            like -l --time-style=full-iso
+  -g                         like -l, but do not list owner
+      --group-directories-first
+                             group directories before files;
+                               can be augmented with a --sort option, but any
+                               use of --sort=none (-U) disables grouping
+  -G, --no-group             in a long listing, don't print group names
+  -h, --human-readable       with -l and -s, print sizes like 1K 234M 2G etc.
+      --si                   likewise, but use powers of 1000 not 1024
+  -H, --dereference-command-line
+                             follow symbolic links listed on the command line
+      --dereference-command-line-symlink-to-dir
+                             follow each command line symbolic link
+                               that points to a directory
+      --hide=PATTERN         do not list implied entries matching shell PATTERN
+                               (overridden by -a or -A)
+      --hyperlink[=WHEN]     hyperlink file names; WHEN can be 'always'
+                               (default if omitted), 'auto', or 'never'
+      --indicator-style=WORD  append indicator with style WORD to entry names:
+                               none (default), slash (-p),
+                               file-type (--file-type), classify (-F)
+  -i, --inode                print the index number of each file
+  -I, --ignore=PATTERN       do not list implied entries matching shell PATTERN
+  -k, --kibibytes            default to 1024-byte blocks for disk usage;
+                               used only with -s and per directory totals
+  -l                         use a long listing format
+  -L, --dereference          when showing file information for a symbolic
+                               link, show information for the file the link
+                               references rather than for the link itself
+  -m                         fill width with a comma separated list of entries
+  -n, --numeric-uid-gid      like -l, but list numeric user and group IDs
+  -N, --literal              print entry names without quoting
+  -o                         like -l, but do not list group information
+  -p, --indicator-style=slash
+                             append / indicator to directories
+  -q, --hide-control-chars   print ? instead of nongraphic characters
+      --show-control-chars   show nongraphic characters as-is (the default,
+                               unless program is 'ls' and output is a terminal)
+  -Q, --quote-name           enclose entry names in double quotes
+      --quoting-style=WORD   use quoting style WORD for entry names:
+                               literal, locale, shell, shell-always,
+                               shell-escape, shell-escape-always, c, escape
+                               (overrides QUOTING_STYLE environment variable)
+  -r, --reverse              reverse order while sorting
+  -R, --recursive            list subdirectories recursively
+  -s, --size                 print the allocated size of each file, in blocks
+  -S                         sort by file size, largest first
+      --sort=WORD            sort by WORD instead of name: none (-U), size (-S),
+                               time (-t), version (-v), extension (-X)
+      --time=WORD            change the default of using modification times;
+                               access time (-u): atime, access, use;
+                               change time (-c): ctime, status;
+                               birth time: birth, creation;
+                             with -l, WORD determines which time to show;
+                             with --sort=time, sort by WORD (newest first)
+      --time-style=TIME_STYLE  time/date format with -l; see TIME_STYLE below
+  -t                         sort by time, newest first; see --time
+  -T, --tabsize=COLS         assume tab stops at each COLS instead of 8
+  -u                         with -lt: sort by, and show, access time;
+                               with -l: show access time and sort by name;
+                               otherwise: sort by access time, newest first
+  -U                         do not sort; list entries in directory order
+  -v                         natural sort of (version) numbers within text
+  -w, --width=COLS           set output width to COLS.  0 means no limit
+  -x                         list entries by lines instead of by columns
+  -X                         sort alphabetically by entry extension
+  -Z, --context              print any security context of each file
+  -1                         list one file per line.  Avoid '\n' with -q or -b
+      --help     display this help and exit
+      --version  output version information and exit
+
+The SIZE argument is an integer and optional unit (example: 10K is 10*1024).
+Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000).
+Binary prefixes can be used, too: KiB=K, MiB=M, and so on.
+
+The TIME_STYLE argument can be full-iso, long-iso, iso, locale, or +FORMAT.
+FORMAT is interpreted like in date(1).  If FORMAT is FORMAT1<newline>FORMAT2,
+then FORMAT1 applies to non-recent files and FORMAT2 to recent files.
+TIME_STYLE prefixed with 'posix-' takes effect only outside the POSIX locale.
+Also the TIME_STYLE environment variable sets the default style to use.
+
+Using color to distinguish file types is disabled both by default and
+with --color=never.  With --color=auto, ls emits color codes only when
+standard output is connected to a terminal.  The LS_COLORS environment
+variable can change the settings.  Use the dircolors command to set it.
+
+Exit status:
+ 0  if OK,
+ 1  if minor problems (e.g., cannot access subdirectory),
+ 2  if serious trouble (e.g., cannot access command-line argument).
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report any translation bugs to <https://translationproject.org/team/>
+Full documentation <https://www.gnu.org/software/coreutils/ls>
+or available locally via: info '(coreutils) ls invocation'
+[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ man ls
+[?2004l[?1049h[22;0;0t[?1h=LS(1)                                               User Commands                                               LS(1)[m
+[m
+[1mNAME[0m[m
+       ls - list directory contents[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mls[0m [[4mOPTION[24m]... [[4mFILE[24m]...[m
+[m
+[1mDESCRIPTION[0m[m
+       List  information  about the FILEs (the current directory by default).  Sort entries alphabetically if none of[m
+       [1m-cftuvSUX[0m nor [1m--sort[0m is specified.[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-a[0m, [1m--all[0m[m
+              do not ignore entries starting with .[m
+[m
+       [1m-A[0m, [1m--almost-all[0m[m
+              do not list implied . and ..[m
+[m
+       [1m--author[0m[m
+              with [1m-l[0m, print the author of each file[m
+[m
+       [1m-b[0m, [1m--escape[0m[m
+              print C-style escapes for nongraphic characters[m
+[m
+       [1m--block-size[0m=[4mSIZE[24m[m
+              with [1m-l[0m, scale sizes by SIZE when printing them; e.g., '--block-size=M'; see SIZE format below[m
+[m
+[7m Manual page ls(1) line 1 (press h for help or q to quit)[27m[K[K...skipping...
+[m
+                   [1mSUMMARY[0m [1mOF[0m [1mLESS[0m [1mCOMMANDS[0m[m
+[m
+      Commands marked with * may be preceded by a number, [4mN[24m.[m
+      Notes in parentheses indicate the behavior if [4mN[24m is given.[m
+      A key preceded by a caret indicates the Ctrl key; thus ^K is ctrl-K.[m
+[m
+  h  H                 Display this help.[m
+  q  :q  Q  :Q  ZZ     Exit.[m
+ ---------------------------------------------------------------------------[m
+[m
+                           [1mMOVING[0m[m
+[m
+  e  ^E  j  ^N  CR  *  Forward  one line   (or [4mN[24m lines).[m
+  y  ^Y  k  ^K  ^P  *  Backward one line   (or [4mN[24m lines).[m
+  f  ^F  ^V  SPACE  *  Forward  one window (or [4mN[24m lines).[m
+  b  ^B  ESC-v      *  Backward one window (or [4mN[24m lines).[m
+  z                 *  Forward  one window (and set window to [4mN[24m).[m
+  w                 *  Backward one window (and set window to [4mN[24m).[m
+  ESC-SPACE         *  Forward  one window, but don't stop at end-of-file.[m
+  d  ^D             *  Forward  one half-window (and set half-window to [4mN[24m).[m
+  u  ^U             *  Backward one half-window (and set half-window to [4mN[24m).[m
+  ESC-)  RightArrow *  Right one half screen width (or [4mN[24m positions).[m
+  ESC-(  LeftArrow  *  Left  one half screen width (or [4mN[24m positions).[m
+  ESC-}  ^RightArrow   Right to last column displayed.[m
+  ESC-{  ^LeftArrow    Left  to first column.[m
+  F                    Forward forever; like "tail -f".[m
+  ESC-F                Like F but stop when search pattern is found.[m
+  r  ^R  ^L            Repaint screen.[m
+[7mHELP -- Press RETURN for more, or q when done[27m[K...skipping...
+LS(1)                                               User Commands                                               LS(1)[m
+[m
+[1mNAME[0m[m
+       ls - list directory contents[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mls[0m [[4mOPTION[24m]... [[4mFILE[24m]...[m
+[m
+[1mDESCRIPTION[0m[m
+       List  information  about the FILEs (the current directory by default).  Sort entries alphabetically if none of[m
+       [1m-cftuvSUX[0m nor [1m--sort[0m is specified.[m
+[m
+       Mandatory arguments to long options are mandatory for short options too.[m
+[m
+       [1m-a[0m, [1m--all[0m[m
+              do not ignore entries starting with .[m
+[m
+       [1m-A[0m, [1m--almost-all[0m[m
+              do not list implied . and ..[m
+[m
+       [1m--author[0m[m
+              with [1m-l[0m, print the author of each file[m
+[m
+       [1m-b[0m, [1m--escape[0m[m
+              print C-style escapes for nongraphic characters[m
+[m
+       [1m--block-size[0m=[4mSIZE[24m[m
+              with [1m-l[0m, scale sizes by SIZE when printing them; e.g., '--block-size=M'; see SIZE format below[m
+[m
+[7m Manual page ls(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ ls -j
+[?2004lls: invalid option -- 'j'
+Try 'ls --help' for more information.
+[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ ls -F Desktop
+[?2004lls: cannot access 'Desktop': No such file or directory
+[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ cd desktop
+[?2004lbash: cd: desktop: No such file or directory
+[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ cd ~/Desktop
+[?2004lbash: cd: /home/ankita/Desktop: No such file or directory
+[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ mkdir ~/Desktop
+[?2004l[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ cd desktop
+[?2004lbash: cd: desktop: No such file or directory
+[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ cd Desktop
+[?2004l[?2004h]0;ankita@TIGER02476: ~/Desktop[01;32mankita@TIGER02476[00m:[01;34m~/Desktop[00m$ cd shell-lesson-dta[K[Kata[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kmkdir shell-lesson-data
+[?2004l[?2004h]0;ankita@TIGER02476: ~/Desktop[01;32mankita@TIGER02476[00m:[01;34m~/Desktop[00m$ mk[Kkdir exercise-data
+[?2004l[?2004h]0;ankita@TIGER02476: ~/Desktop[01;32mankita@TIGER02476[00m:[01;34m~/Desktop[00m$ pwd
+[?2004l/home/ankita/Desktop
+[?2004h]0;ankita@TIGER02476: ~/Desktop[01;32mankita@TIGER02476[00m:[01;34m~/Desktop[00m$ cd shell-lesson-data
+[?2004l[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ cd exercise-data
+[?2004lbash: cd: exercise-data: No such file or directory
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ mkdir exercide[K[Ke[Kse-data
+[?2004l[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ cd mkdir-exercise-data
+[?2004lbash: cd: mkdir-exercise-data: No such file or directory
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ pwd
+[?2004l/home/ankita/Desktop/shell-lesson-data
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ cd mkdir[K[K[K[K[Kexercise-data
+[?2004l[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data/exercise-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data/exercise-data[00m$ pwd
+[?2004l/home/ankita/Desktop/shell-lesson-data/exercise-data
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data/exercise-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data/exercise-data[00m$ ls -F
+[?2004l[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data/exercise-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data/exercise-data[00m$ C[Kcd..
+[?2004lcd..: command not found
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data/exercise-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data/exercise-data[00m$ pwd
+[?2004l/home/ankita/Desktop/shell-lesson-data/exercise-data
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data/exercise-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data/exercise-data[00m$ cd..
+[?2004lcd..: command not found
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data/exercise-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data/exercise-data[00m$ cd ..
+[?2004l[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ pwd
+[?2004l/home/ankita/Desktop/shell-lesson-data
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ ls -F -a
+[?2004l[0m[01;34m.[0m/  [01;34m..[0m/  [01;34mexercise-data[0m/
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ ls -F/
+[?2004lls: invalid option -- '/'
+Try 'ls --help' for more information.
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ ls -s exercise-data
+[?2004ltotal 0
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ ls -F -a[K[K[K[K[K[K -s exercise-data
+[?2004ltotal 0
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ ls -S EXERCISE-DATA[K[K[K[K[K[K[K[K[K[K[K[K[Kexercose[K[K[Kise-data
+[?2004l[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ ls -F /
+[?2004l[0m[01;36mbin[0m@   [01;34mdev[0m/  [01;34mhome[0m/  [01;36mlib[0m@    [01;36mlib64[0m@   [01;34mlost+found[0m/  [01;34mmnt[0m/  [01;34mproc[0m/  [01;34mrun[0m/   [01;34msnap[0m/  [01;34msys[0m/  [01;34musr[0m/
+[01;34mboot[0m/  [01;34metc[0m/  [01;32minit[0m*  [01;36mlib32[0m@  [01;36mlibx32[0m@  [01;34mmedia[0m/       [01;34mopt[0m/  [01;34mroot[0m/  [01;36msbin[0m@  [01;34msrv[0m/   [30;42mtmp[0m/  [01;34mvar[0m/
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ LS [K[K[Kls -s exercise-data
+[?2004ltotal 4
+0 abc.txt.txt  4 [0m[01;34manimal-counts[0m  0 blah.txt
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ ls -S exersix[Kze-[K[K[Kce-data
+[?2004lls: cannot access 'exersice-data': No such file or directory
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ ls -S exersice-data[1Pe-data[1Pe-data[1Pe-datace-dataie-datase-data
+[?2004l[0m[01;34manimal-counts[0m  abc.txt.txt  blah.txt
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ mks[Kdir north-pacific-gyre
+[?2004l[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ ^C[Kls north-pacific-gyre/
+[?2004lNENE01729A.txt  NENE01812A.txt
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ ls north-pacific-gyre/gooG
+[?2004lls: cannot access 'north-pacific-gyre/gooG': No such file or directory
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ ls north-pacific-gyre/goo[K[K[K
+[?2004lNENE01729A.txt  NENE01812A.txt
+[?2004h]0;ankita@TIGER02476: ~/Desktop/shell-lesson-data[01;32mankita@TIGER02476[00m:[01;34m~/Desktop/shell-lesson-data[00m$ exit
+[?2004lexit
+
+Script done on 2023-02-24 16:37:53+05:30 [COMMAND_EXIT_CODE="0"]

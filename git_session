@@ -1,0 +1,886 @@
+Script started on 2023-02-27 08:23:20+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="168" LINES="43"]
+[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ git --version
+[?2004lgit version 2.34.1
+[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ sudo apt-get install install-info
+[?2004l[sudo] password for ankita: 
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+install-info is already the newest version (6.8-4build1).
+install-info set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ tar -zxf git-2.8.0.tar.gz
+[?2004ltar (child): git-2.8.0.tar.gz: Cannot open: No such file or directory
+tar (child): Error is not recoverable: exiting now
+tar: Child returned status 2
+tar: Error is not recoverable: exiting now
+[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ git config --global user.name "John Doe"[C[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"a"[1P"A"n"k"i"t"a" "W"a"d"h"e"r"a"
+[?2004l[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ git config --global user.email johndoe@example.com[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kankita.wadhera@tigeranalytics,com
+[?2004l[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ git config --global user.email johndoe@example.com[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K ankita.wadhera@tigeranalytics.com
+[?2004l[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ git config --global init.defaultBranch main
+[?2004l[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ git config --list
+[?2004l[?1h=user.name=Ankita Wadhera[m
+user.email=ankita.wadhera@tigeranalytics.com[m
+init.defaultbranch=main[m
+[K[?1l>[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$  git config user.name
+[?2004lAnkita Wadhera
+[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$  git help config
+[?2004l[?1049h[22;0;0t[?1h=GIT-CONFIG(1)                                                                Git Manual                                                               GIT-CONFIG(1)[m
+[m
+[1mNAME[0m[m
+       git-config - Get and set repository or global options[m
+[m
+[1mSYNOPSIS[0m[m
+       [4mgit[24m [4mconfig[24m [<file-option>] [--type=<type>] [--fixed-value] [--show-origin] [--show-scope] [-z|--null] name [value [value-pattern]][m
+       [4mgit[24m [4mconfig[24m [<file-option>] [--type=<type>] --add name value[m
+       [4mgit[24m [4mconfig[24m [<file-option>] [--type=<type>] [--fixed-value] --replace-all name value [value-pattern][m
+       [4mgit[24m [4mconfig[24m [<file-option>] [--type=<type>] [--show-origin] [--show-scope] [-z|--null] [--fixed-value] --get name [value-pattern][m
+       [4mgit[24m [4mconfig[24m [<file-option>] [--type=<type>] [--show-origin] [--show-scope] [-z|--null] [--fixed-value] --get-all name [value-pattern][m
+       [4mgit[24m [4mconfig[24m [<file-option>] [--type=<type>] [--show-origin] [--show-scope] [-z|--null] [--fixed-value] [--name-only] --get-regexp name_regex [value-pattern][m
+       [4mgit[24m [4mconfig[24m [<file-option>] [--type=<type>] [-z|--null] --get-urlmatch name URL[m
+       [4mgit[24m [4mconfig[24m [<file-option>] [--fixed-value] --unset name [value-pattern][m
+       [4mgit[24m [4mconfig[24m [<file-option>] [--fixed-value] --unset-all name [value-pattern][m
+       [4mgit[24m [4mconfig[24m [<file-option>] --rename-section old_name new_name[m
+       [4mgit[24m [4mconfig[24m [<file-option>] --remove-section name[m
+       [4mgit[24m [4mconfig[24m [<file-option>] [--show-origin] [--show-scope] [-z|--null] [--name-only] -l | --list[m
+       [4mgit[24m [4mconfig[24m [<file-option>] --get-color name [default][m
+       [4mgit[24m [4mconfig[24m [<file-option>] --get-colorbool name [stdout-is-tty][m
+       [4mgit[24m [4mconfig[24m [<file-option>] -e | --edit[m
+[m
+[1mDESCRIPTION[0m[m
+       You can query/set/replace/unset options with this command. The name is actually the section and the key separated by a dot, and the value will be escaped.[m
+[m
+       Multiple lines can be added to an option by using the [1m--add[0m option. If you want to update or unset an option which can occur on multiple lines, a[m
+       [1mvalue-pattern[0m (which is an extended regular expression, unless the [1m--fixed-value[0m option is given) needs to be given. Only the existing values that match the[m
+       pattern are updated or unset. If you want to handle the lines that do [1mnot[0m match the pattern, just prepend a single exclamation mark in front (see also the[m
+       section called “EXAMPLES”), but note that this only works when the [1m--fixed-value[0m option is not in use.[m
+[m
+       The [1m--type=<type>[0m option instructs [4mgit[24m [4mconfig[24m to ensure that incoming and outgoing values are canonicalize-able under the given <type>. If no [1m--type=<type>[0m[m
+       is given, no canonicalization will be performed. Callers may unset an existing [1m--type[0m specifier with [1m--no-type[0m.[m
+[m
+       When reading, the values are read from the system, global and repository local configuration files by default, and options [1m--system[0m, [1m--global[0m, [1m--local[0m,[m
+       [1m--worktree[0m and [1m--file[0m [1m<filename>[0m can be used to tell the command to read from only that location (see the section called “FILES”).[m
+[m
+       When writing, the new value is written to the repository local configuration file by default, and options [1m--system[0m, [1m--global[0m, [1m--worktree[0m, [1m--file[0m [1m<filename>[0m[m
+       can be used to tell the command to write to that location (you can say [1m--local[0m but that is the default).[m
+[m
+       This command will fail with non-zero status upon error. Some exit codes are:[m
+[m
+       •   The section or key is invalid (ret=1),[m
+[7m Manual page git-config(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ pwd
+[?2004l/home/ankita
+[?2004h]0;ankita@TIGER02476: ~[01;32mankita@TIGER02476[00m:[01;34m~[00m$ cd my_project
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git init
+[?2004lInitialized empty Git repository in /home/ankita/my_project/.git/
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ gits [K[K status
+[?2004lOn branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mLICENSE.docx[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git add LICENSE
+[?2004lfatal: pathspec 'LICENSE' did not match any files
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git add LICENSE.docx
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git commit -m 'Initial project version'
+[?2004l[main (root-commit) 5ed86fa] Initial project version
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 LICENSE.docx
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git sts[Katus
+[?2004lOn branch main
+nothing to commit, working tree clean
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ gt[Kit clone https://github.com/ankitawadh/deck1.git
+[?2004lCloning into 'deck1'...
+Username for 'https://github.com': guruanki        ankita.wadhera
+Password for 'https://ankita.wadhera@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/ankitawadh/deck1.git/'
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ https://github.com/ankitawadh/deck1.git
+[?2004lbash: https://github.com/ankitawadh/deck1.git: No such file or directory
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ https://github.com/ankitawadh/deck1.githttps://github.com/ankitawadh/deck1.git[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgit clone https://github.com/ankitawadh/deck1.git
+[?2004lCloning into 'deck1'...
+Username for 'https://github.com': ankita.wadjera    hera@tigeranalytics.com
+Password for 'https://ankita.wadhera@tigeranalytics.com@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/ankitawadh/deck1.git/'
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ https://github.com/ankitawadh/deck1.gitghttps://github.com/ankitawadh/deck1.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cihttps://github.com/ankitawadh/deck1.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cthttps://github.com/ankitawadh/deck1.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C https://github.com/ankitawadh/deck1.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cchttps://github.com/ankitawadh/deck1.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Clhttps://github.com/ankitawadh/deck1.gitohttps://github.com/ankitawadh/deck1.gitnhttps://github.com/ankitawadh/deck1.gitehttps://github.com/ankitawadh/deck1.git https://github.com/ankitawadh/deck1.git
+[?2004lCloning into 'deck1'...
+Username for 'https://github.com': ankita.wadhera@tigernala    analut  ytics.com
+Password for 'https://ankita.wadhera@tigeranalytics.com@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/ankitawadh/deck1.git/'
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git clone https://github.com/ankitawadh/deck1.git
+[?2004lCloning into 'deck1'...
+Username for 'https://github.com': ankitawadh
+Password for 'https://ankitawadh@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/ankitawadh/deck1.git/'
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ gi [K[Kit clone https://github.com/ankitawadh/deck1.git
+[?2004lCloning into 'deck1'...
+Username for 'https://github.com': ankitawadh
+Password for 'https://ankitawadh@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/ankitawadh/deck1.git/'
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git sat[K[K[Kstatus
+[?2004lOn branch main
+nothing to commit, working tree clean
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git status
+[?2004lOn branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mREADME.txt[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git add README
+[?2004lfatal: pathspec 'README' did not match any files
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git add README.txt
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git sr[Ktatus
+[?2004lOn branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mnew file:   README.txt[m
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git add READMEgit add READMEgit add README[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kstatus
+[?2004lOn branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mnew file:   README.txt[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   LICENSE.docx[m
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git add CONTRIBUTING.md[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KLICENSE.dox[Kcx
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git status
+[?2004lOn branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mmodified:   LICENSE.docx[m
+	[32mnew file:   README.txt[m
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git add CONTRIBUTING.mdgit add CONTRIBUTING.md[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kstatus
+[?2004lOn branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mmodified:   LICENSE.docx[m
+	[32mnew file:   README.txt[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   LICENSE.docx[m
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git ad[K[K[K[K[K[K$$[K[Kgit add LICENC[KSE.DOC[K[K[Kdocx
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git sra[K[Ktaus
+[?2004lgit: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+	status
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git sr[Ktatus
+[?2004lOn branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mmodified:   LICENSE.docx[m
+	[32mnew file:   README.txt[m
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git srya[K[K[Ktatus -s
+[?2004l[32mM[m  LICENSE.docx
+[32mA[m  README.txt
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ got diff[K[K[K[K[K[K[Kit diff
+[?2004l[?1h=[K[?1l>[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git diff --staged
+[?2004l[?1h=[1mdiff --git a/LICENSE.docx b/LICENSE.docx[m[m
+[1mindex e69de29..aa2de71 100644[m[m
+Binary files a/LICENSE.docx and b/LICENSE.docx differ[m
+[1mdiff --git a/README.txt b/README.txt[m[m
+[1mnew file mode 100644[m[m
+[1mindex 0000000..e69de29[m[m
+[K[?1l>[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git commit
+[?2004lhint: Waiting for your editor to close the file... [?2004h[?1049h[22;0;0t[1;43r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[41;78H(B[0;7m[ Reading... ](B[m[41;77H(B[0;7m[ Read 9 lines ](B[m[H(B[0;7m  GNU nano 6.2                                                   /home/ankita/my_project/.git/COMMIT_EDITMSG                                                            [1;167H(B[m[42d(B[0;7m^G(B[m Help[42;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[42;65H(B[0;7m^T(B[m Execute[81G(B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[42;113H(B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket  (B[0;7mM-Q(B[m Previous[43d(B[0;7m^X(B[m Exit[43;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste[43;65H(B[0;7m^J(B[m Justify[81G(B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[43;113H(B[0;7mM-6(B[m Copy[43;129H(B[0;7m^Q(B[m Where Was    (B[0;7mM-W(B[m Next[3d[36m# Please enter the commit message for your changes. Lines starting[4d# with '#' will be ignored, and an empty message aborts the commit.[5d#[6d# On branch main[7d# Changes to be committed:[8d#[38;5;208m       [36mmodified:   LICENSE.docx[9d#[38;5;208m       [36mnew file:   README.txt[10d#[2d[39m(B[m[?12l[?25h[?25l[1;110H(B[0;7m*[167G(B[m7[2;40r8[2dM[1;43r[3;1H[?12l[?25h[?25l[?12l[?25hm[?25l[?12l[?25hy[?25l[?12l[?25h [?25l[?12l[?25hf[?25l[?12l[?25hi[?25l[?12l[?25hr[?25l[?12l[?25hs[?25l[?12l[?25ht[?25l[?12l[?25h [?25l[?12l[?25hc[?25l[?12l[?25hi[?25l[?12l[?25h [?25l[?12l[?25ho[?25l[?12l[?25hm[?25l[?12l[?25hm[?25l[?12l[?25hi[?25l[?12l[?25ht[?25l7[4;40r8[4dM[1;43r[4;1H[?12l[?25h[?25l[41d[K[?12l[?25h[4dX[?25l7[5;41r8[5dM[1;43r[5;1H[?12l[?25h[?25l[?12l[?25hg[?25l[?12l[?25hi[?25l[?12l[?25ht[?25l[?12l[?25h [?25l[?12l[?25hs[?25l[?12l[?25ht[?25l[?12l[?25ha[?25l[?12l[?25ht[?25l[?12l[?25hu[?25l[?12l[?25hs[?25l7[6;41r8[6dM[1;43r[6;1H[?12l[?25h[?25l[41d(B[0;7mSave modified buffer?                                                                                                                                                   [42;1H Y(B[m Yes[K[43d(B[0;7m N(B[m No  [43;18H(B[0;7mC(B[m Cancel[K[41;23H[?12l[?25h[?25l[J[43d[?12l[?25h[43;1H[?1049l[23;0;0t[?1l>[?2004l[KAborting commit due to empty commit message.
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git commit -m "my first commiy[Kt"
+[?2004l[main 3e0784d] my first commit
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.txt
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git staus[K[Ktus
+[?2004lOn branch main
+nothing to commit, working tree clean
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ rm PROJECTS.md
+[?2004lrm: cannot remove 'PROJECTS.md': No such file or directory
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ rm PROJECTS.md[K[K[K
+[?2004lrm: cannot remove 'PROJECTS': No such file or directory
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ rm my-zpro[K[K[K[K[K_proh[Khec[K[K[Kject
+[?2004lrm: cannot remove 'my_project': No such file or directory
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ rm LICENSE.DOCS[K[K[K[Kdicx
+[?2004lrm: cannot remove 'LICENSE.dicx': No such file or directory
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ rm LICENSE.dicx[K[K[Kp[Kocx
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git status
+[?2004lOn branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mdeleted:    LICENSE.docx[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git rm PROJECTS.md[K[K[K[K[K[K[K[K[K[K[KLICENSE.docx[Kx
+[?2004lrm 'LICENSE.docx'
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git stu[Katius[K[K[Kus
+[?2004lOn branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mdeleted:    LICENSE.docx[m
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git rm LICENSE.docx
+[?2004lfatal: pathspec 'LICENSE.docx' did not match any files
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git rm PROJECTS.md[K[K[K[K[K[K[K[K[K[K[K==[K[K[K[K[K[K[K[K[Kgit rm --cached README.[K[K[K[K[K[K[KLIZ[KS[KCENSE.DICX[K[K[K[Kdc[Kocx
+[?2004lfatal: pathspec 'LICENSE.docx' did not match any files
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git rm --cached README[K[K[K[K[K[KREADME.txt
+[?2004lrm 'README.txt'
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git status
+[?2004lOn branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mdeleted:    LICENSE.docx[m
+	[32mdeleted:    README.txt[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mREADME.txt[m
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git add README.tx
+[?2004lfatal: pathspec 'README.tx' did not match any files
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git rm --cached README.txt
+[?2004lfatal: pathspec 'README.txt' did not match any files
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git rm --cached READMEgit rm --cached README[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K add README.txt
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git status
+[?2004lOn branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mdeleted:    LICENSE.docx[m
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git lo[K[Kclone https://github.com/ankitawadh/13-01-23.git
+[?2004lCloning into '13-01-23'...
+Username for 'https://github.com': ankitawadh
+Password for 'https://ankitawadh@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/ankitawadh/13-01-23.git/'
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git log
+[?2004l[?1h=[33mcommit 3e0784d2a8ae45d30d2f90058e71e8416304f4df[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m[m
+Author: Ankita Wadhera <ankita.wadhera@tigeranalytics.com>[m
+Date:   Mon Feb 27 08:53:38 2023 +0530[m
+[m
+    my first commit[m
+[m
+[33mcommit 5ed86fa736d8b9544de22a665aa2696932a4d291[m[m
+Author: Ankita Wadhera <ankita.wadhera@tigeranalytics.com>[m
+Date:   Mon Feb 27 08:33:41 2023 +0530[m
+[m
+    Initial project version[m
+[K[?1l>[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git log --stat
+[?2004l[?1h=[33mcommit 3e0784d2a8ae45d30d2f90058e71e8416304f4df[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m[m
+Author: Ankita Wadhera <ankita.wadhera@tigeranalytics.com>[m
+Date:   Mon Feb 27 08:53:38 2023 +0530[m
+[m
+    my first commit[m
+[m
+ LICENSE.docx | Bin [31m0[m -> [32m12126[m bytes[m
+ README.txt   |   0[m
+ 2 files changed, 0 insertions(+), 0 deletions(-)[m
+[m
+[33mcommit 5ed86fa736d8b9544de22a665aa2696932a4d291[m[m
+Author: Ankita Wadhera <ankita.wadhera@tigeranalytics.com>[m
+Date:   Mon Feb 27 08:33:41 2023 +0530[m
+[m
+    Initial project version[m
+[m
+ LICENSE.docx | 0[m
+ 1 file changed, 0 insertions(+), 0 deletions(-)[m
+[K[?1l>[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git log --pretty=oneline
+[?2004l[?1h=[33m3e0784d2a8ae45d30d2f90058e71e8416304f4df[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m my first commit[m
+[33m5ed86fa736d8b9544de22a665aa2696932a4d291[m Initial project version[m
+[K[?1l>[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$  git log --pretty=format:"%h - %an, %ar : %s"
+[?2004l[?1h=3e0784d - Ankita Wadhera, 25 minutes ago : my first commit[m
+5ed86fa - Ankita Wadhera, 44 minutes ago : Initial project version[m
+[K[?1l>[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git log --since=2.weeks
+[?2004l[?1h=[33mcommit 3e0784d2a8ae45d30d2f90058e71e8416304f4df[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m[m
+Author: Ankita Wadhera <ankita.wadhera@tigeranalytics.com>[m
+Date:   Mon Feb 27 08:53:38 2023 +0530[m
+[m
+    my first commit[m
+[m
+[33mcommit 5ed86fa736d8b9544de22a665aa2696932a4d291[m[m
+Author: Ankita Wadhera <ankita.wadhera@tigeranalytics.com>[m
+Date:   Mon Feb 27 08:33:41 2023 +0530[m
+[m
+    Initial project version[m
+[K[?1l>[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git status
+[?2004lOn branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mdeleted:    LICENSE.docx[m
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git commit --amend
+[?2004lhint: Waiting for your editor to close the file... [?2004h[?1049h[22;0;0t[1;43r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[41;78H(B[0;7m[ Reading... ](B[m[41;76H(B[0;7m[ Read 11 lines ](B[m[H(B[0;7m  GNU nano 6.2                                                   /home/ankita/my_project/.git/COMMIT_EDITMSG                                                            [1;167H(B[m[42d(B[0;7m^G(B[m Help[42;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[42;65H(B[0;7m^T(B[m Execute[81G(B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[42;113H(B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket  (B[0;7mM-Q(B[m Previous[43d(B[0;7m^X(B[m Exit[43;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste[43;65H(B[0;7m^J(B[m Justify[81G(B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[43;113H(B[0;7mM-6(B[m Copy[43;129H(B[0;7m^Q(B[m Where Was    (B[0;7mM-W(B[m Next[2dmy first commit[4d[36m# Please enter the commit message for your changes. Lines starting[5d# with '#' will be ignored, and an empty message aborts the commit.[6d#[7d# Date:      Mon Feb 27 08:53:38 2023 +0530[8d#[9d# On branch main[10d# Changes to be committed:[11d#[38;5;208m       [36mrenamed:    LICENSE.docx -> README.txt[12d#[2d[39m(B[m[?12l[?25h[?25l[41d[J[43d[?12l[?25h[43;1H[?1049l[23;0;0t[?1l>[?2004l[K[main 87232c9] my first commit
+ Date: Mon Feb 27 08:53:38 2023 +0530
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename LICENSE.docx => README.txt (100%)
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git commit -m 'Initial commit'
+[?2004lOn branch main
+nothing to commit, working tree clean
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git add forgotten_file
+[?2004lfatal: pathspec 'forgotten_file' did not match any files
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git add abc.txt
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ 'git add abc.txtforgotten_filecommit -m 'Initial commit'[12P-amend
+[?2004lhint: Waiting for your editor to close the file... [?2004h[?1049h[22;0;0t[1;43r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[41;78H(B[0;7m[ Reading... ](B[m[41;76H(B[0;7m[ Read 12 lines ](B[m[H(B[0;7m  GNU nano 6.2                                                   /home/ankita/my_project/.git/COMMIT_EDITMSG                                                            [1;167H(B[m[42d(B[0;7m^G(B[m Help[42;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[42;65H(B[0;7m^T(B[m Execute[81G(B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[42;113H(B[0;7mM-A(B[m Set Mark    (B[0;7mM-](B[m To Bracket  (B[0;7mM-Q(B[m Previous[43d(B[0;7m^X(B[m Exit[43;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste[43;65H(B[0;7m^J(B[m Justify[81G(B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[43;113H(B[0;7mM-6(B[m Copy[43;129H(B[0;7m^Q(B[m Where Was    (B[0;7mM-W(B[m Next[2dmy first commit[4d[36m# Please enter the commit message for your changes. Lines starting[5d# with '#' will be ignored, and an empty message aborts the commit.[6d#[7d# Date:      Mon Feb 27 08:53:38 2023 +0530[8d#[9d# On branch main[10d# Changes to be committed:[11d#[38;5;208m       [36mrenamed:    LICENSE.docx -> README.txt[12d#[38;5;208m       [36mnew file:   abc.txt[13d#[2d[39m(B[m[?12l[?25h[?25l[41d[J[43d[?12l[?25h[43;1H[?1049l[23;0;0t[?1l>[?2004l[K[main b4aedc5] my first commit
+ Date: Mon Feb 27 08:53:38 2023 +0530
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ rename LICENSE.docx => README.txt (100%)
+ create mode 100644 abc.txt
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git status
+[?2004lOn branch main
+nothing to commit, working tree clean
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git log
+[?2004l[?1h=[33mcommit b4aedc54e4ae830e9b3a30f1529316490c441e81[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m[m
+Author: Ankita Wadhera <ankita.wadhera@tigeranalytics.com>[m
+Date:   Mon Feb 27 08:53:38 2023 +0530[m
+[m
+    my first commit[m
+[m
+[33mcommit 5ed86fa736d8b9544de22a665aa2696932a4d291[m[m
+Author: Ankita Wadhera <ankita.wadhera@tigeranalytics.com>[m
+Date:   Mon Feb 27 08:33:41 2023 +0530[m
+[m
+    Initial project version[m
+[K[?1l>[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git logstatus
+[?2004lOn branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   abc.txt[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git add LICENSE.T[Ktxt
+[?2004lfatal: pathspec 'LICENSE.txt' did not match any files
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git add LICENSE.txt[K[K[Kdocx
+[?2004lfatal: pathspec 'LICENSE.docx' did not match any files
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git add *
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git add *LICENSE.docx[1Ptxt[9Pstatus
+[?2004lOn branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mmodified:   abc.txt[m
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git reset HEAD CONTRIBUTING.md[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KREADME.tx
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git reset HEAD README.txt
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git reset HEAD README.txt[Kstatus[K
+[?2004lOn branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mmodified:   abc.txt[m
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git checkout -- CONTRIBUTING.md[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KREADME.txt
+[?2004lerror: unknown option `README.txt'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --guess               second guess 'git checkout <no-such-branch>' (default)
+    --overlay             use overlay mode (default)
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge or diff3)
+    -d, --detach          detach HEAD at named commit
+    -t, --track           set upstream info for new branch
+    -f, --force           force checkout (throw away local modifications)
+    --orphan <new-branch>
+                          new unparented branch
+    --overwrite-ignore    update ignored files (default)
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git checkout -- CONTRIBUTING.md[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K-abc.txt
+[?2004lerror: unknown option `abc.txt'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --guess               second guess 'git checkout <no-such-branch>' (default)
+    --overlay             use overlay mode (default)
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge or diff3)
+    -d, --detach          detach HEAD at named commit
+    -t, --track           set upstream info for new branch
+    -f, --force           force checkout (throw away local modifications)
+    --orphan <new-branch>
+                          new unparented branch
+    --overwrite-ignore    update ignored files (default)
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$  git restore --staged CONTRIBUTING.md[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kabc.txt
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ gut status
+[?2004lCommand 'gut' not found, did you mean:
+  command 'cut' from deb coreutils (8.32-4.1ubuntu1)
+  command 'git' from deb git (1:2.34.1-1ubuntu1.6)
+  command 'gout' from deb scotch (6.1.3-1)
+  command 'gmt' from deb gmt (6.3.0+dfsg-2build1)
+  command 'gt' from deb genometools (1.6.2+ds-2)
+  command 'gpt' from deb gpt (1.1-7)
+  command 'lut' from deb tracetuner (3.0.6~beta+dfsg-3)
+  command 'nut' from deb nutsqlite (2.0.6-3)
+  command 'gst' from deb gnu-smalltalk (3.2.5-1.3ubuntu1)
+Try: sudo apt install <deb name>
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ gut statusit checkout --abc.txtREADME.txtstatus[Kreset HEAD README.txtstatus[K
+[?2004lOn branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   abc.txt[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git remote https://github.com/ankitawadh/13-01-23.git
+[?2004lerror: Unknown subcommand: https://github.com/ankitawadh/13-01-23.git
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git clone https://github.com/ankitawadh/13-01-23.git
+[?2004lCloning into '13-01-23'...
+Username for 'https://github.com': ankitawadh
+Password for 'https://ankitawadh@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/ankitawadh/13-01-23.git/'
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ Support for password authentication was removed on August 13, 2021.Support for password authentication was removed on August 13, 2021.Support for password authentication was removed on August 13, 2021.[A[84Pgit clone https://github.com/ankitawadh/13-01-23.git
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@remot[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lerror: Unknown subcommand: https://github.com/ankitawadh/13-01-23.git
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git remote https://github.com/ankitawadh/13-01-23.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pclon[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lCloning into '13-01-23'...
+Username for 'https://github.com': ankitawadh
+Password for 'https://ankitawadh@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/ankitawadh/13-01-23.git/'
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ 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[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[41P clone https://github.com/ankitawadh/13-01-23.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@remot[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pclon[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lCloning into '13-01-23'...
+Username for 'https://github.com': ankitawadh
+Password for 'https://ankitawadh@github.com': 
+fatal: unable to access 'https://github.com/ankitawadh/13-01-23.git/': The requested URL returned error: 400
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git clone https://github.com/ankitawadh/13-01-23.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@remot[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pclon[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lCloning into '13-01-23'...
+Username for 'https://github.com': ankitawadh
+Password for 'https://ankitawadh@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/ankitawadh/13-01-23.git/'
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git clone https://github.com/ankitawadh/13-01-23.git
+[?2004lCloning into '13-01-23'...
+Username for 'https://github.com': ankitawash  dh
+Password for 'https://ankitawadh@github.com': 
+remote: Write access to repository not granted.
+fatal: unable to access 'https://github.com/ankitawadh/13-01-23.git/': The requested URL returned error: 403
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git clone https://github.com/ankitawadh/13-01-23.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@remot[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pclon[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lCloning into '13-01-23'...
+Username for 'https://github.com': ankitawadh
+Password for 'https://ankitawadh@github.com': 
+remote: Enumerating objects: 9, done.[K
+remote: Counting objects:  11% (1/9)[Kremote: Counting objects:  22% (2/9)[Kremote: Counting objects:  33% (3/9)[Kremote: Counting objects:  44% (4/9)[Kremote: Counting objects:  55% (5/9)[Kremote: Counting objects:  66% (6/9)[Kremote: Counting objects:  77% (7/9)[Kremote: Counting objects:  88% (8/9)[Kremote: Counting objects: 100% (9/9)[Kremote: Counting objects: 100% (9/9), done.[K
+remote: Compressing objects:  25% (1/4)[Kremote: Compressing objects:  50% (2/4)[Kremote: Compressing objects:  75% (3/4)[Kremote: Compressing objects: 100% (4/4)[Kremote: Compressing objects: 100% (4/4), done.[K
+remote: Total 9 (delta 0), reused 6 (delta 0), pack-reused 0[K
+Receiving objects:  11% (1/9)Receiving objects:  22% (2/9)Receiving objects:  33% (3/9)Receiving objects:  44% (4/9)Receiving objects:  55% (5/9)Receiving objects:  66% (6/9)Receiving objects:  77% (7/9)Receiving objects:  88% (8/9)Receiving objects: 100% (9/9)Receiving objects: 100% (9/9), done.
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ 
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ 
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ cid [K[K[Kd ticgit
+[?2004lbash: cd: ticgit: No such file or directory
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ got t[K[K[K[Kit remote origin
+[?2004lerror: Unknown subcommand: origin
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git remote -v
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git remote -vorigin[K[K[K[K[K[K
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git remote oro[Kgin
+[?2004lerror: Unknown subcommand: orgin
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git remote orgin[K[K[Kigin
+[?2004lerror: Unknown subcommand: origin
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ got [K[K[Kit tags
+[?2004lgit: 'tags' is not a git command. See 'git --help'.
+
+The most similar commands are
+	stage
+	tag
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git tags[K
+[?2004l[?1h=[K[?1l>[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git tag -a v1.4 -m "my version 1.4"
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git tag -a v1.4 -m "my version 1.4"[K
+[?2004l[?1h=v1.4[m
+[K[?1l>[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git tag v1.4-lw
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git tag v1.4-lwgit show v1.4-lw[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgit show v1.4-lw
+[?2004l[?1h=[33mcommit b4aedc54e4ae830e9b3a30f1529316490c441e81[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;33mtag: v1.4-lw[m[33m, [m[1;33mtag: v1.4[m[33m)[m[m
+Author: Ankita Wadhera <ankita.wadhera@tigeranalytics.com>[m
+Date:   Mon Feb 27 08:53:38 2023 +0530[m
+[m
+    my first commit[m
+[m
+[1mdiff --git a/LICENSE.docx b/README.txt[m[m
+[1msimilarity index 100%[m[m
+[1mrename from LICENSE.docx[m[m
+[1mrename to README.txt[m[m
+[1mdiff --git a/abc.txt b/abc.txt[m[m
+[1mnew file mode 100644[m[m
+[1mindex 0000000..e69de29[m[m
+[K[?1l>[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git push origin v1.5
+[?2004lerror: src refspec v1.5 does not match any
+[31merror: failed to push some refs to 'origin'
+[m[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git push origin v1.5[K4
+[?2004lfatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git push origin v1.4[1P v1.4[1P v1.4[1P v1.4[1P v1.4[1P v1.4[1P v1.4m v1.4a v1.4i v1.4n v1.4
+[?2004lfatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git push main v1.4[1P v1.4[1P v1.4[1P v1.4a v1.4s v1.4t v1.4e v1.4r v1.4
+[?2004lfatal: 'master' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$  git tag -d v1.4-lw
+[?2004lDeleted tag 'v1.4-lw' (was b4aedc5)
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git config --global alias.co checkout
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git config --global alias.br branch
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git config --global alias.ci commit
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git config --global alias.ci commit[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K git config --global alias.st status
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ pwd
+[?2004l/home/ankita/my_project
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git stay[Ktus
+[?2004lOn branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   abc.txt[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m13-01-23/[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git sa[Ktu[Katus
+[?2004lOn branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   abc.txt[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m13-01-23/[m
+	[31mtrial.docx[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git add 
+[?2004lNothing specified, nothing added.
+[33mhint: Maybe you wanted to say 'git add .'?[m
+[33mhint: Turn this message off by running[m
+[33mhint: "git config advice.addEmptyPathspec false"[m
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git add statuspwd[Kgit config --global alias.ci commitbr branchco checkout[17Ppush master v1.4[2Pin[C[C[C[C[C[2@orig[C[C[C[C[C[C[C5[4Pshow v1.4-lw[1Ptag[C[C[C[C[C[C[C[C[K -a v1.4 -m "my version 1.4"[Ksremote origin[1Pgin[K-vorigin[8Pcd ticgitgit clone https://github.com/ankitawadh/13-01-23.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@remot[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pclon[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@remot[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cstatus[Ku[C[C[C[C[C[C[C[Cit checkout --abc.txtREADME.txtstatus[Kreset HEAD README.txt[Kstatus[K[1Padd *LICENSE.docx[1Ptxt[9Pstatusadd LICENSE.txtdocx*[K
+[?2004lwarning: adding embedded git repository: 13-01-23
+[33mhint: You've added another git repository inside your current repository.[m
+[33mhint: Clones of the outer repository will not contain the contents of[m
+[33mhint: the embedded repository and will not know how to obtain it.[m
+[33mhint: If you meant to add a submodule, use:[m
+[33mhint: [m
+[33mhint: 	git submodule add <url> 13-01-23[m
+[33mhint: [m
+[33mhint: If you added this path by mistake, you can remove it from the[m
+[33mhint: index with:[m
+[33mhint: [m
+[33mhint: 	git rm --cached 13-01-23[m
+[33mhint: [m
+[33mhint: See "git help submodule" for more information.[m
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ got a[K[K[K[Kit add trial.docx
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git add trial.docx*[K[Kstatus
+[?2004lOn branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mnew file:   13-01-23[m
+	[32mmodified:   abc.txt[m
+	[32mnew file:   trial.docx[m
+
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git commit -m "a;;[K[Kll commit"
+[?2004l[main fe043d1] all commit
+ 3 files changed, 2 insertions(+)
+ create mode 160000 13-01-23
+ create mode 100644 trial.docx
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git commit -m "all commit"status[K
+[?2004lOn branch main
+nothing to commit, working tree clean
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ got b[K[K[K[Kit n[Kbeach[K[K[K[Kranhc[K[Kch testuig[K[K[King
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ it log --oneline --decorate[1@g
+[?2004l[?1h=[33mfe043d1[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;32mtesting[m[33m)[m all commit[m
+[33mb4aedc5[m[33m ([m[1;33mtag: v1.4[m[33m)[m my first commit[m
+[33m5ed86fa[m Initial project version[m
+[K[?1l>[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git log --oneline --decorate[10Pbranch testing[8Pstatus
+[?2004lOn branch main
+nothing to commit, working tree clean
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git checkourb [K[Kt t[K[K[K[Kt trs[K[Kesting
+[?2004lSwitched to branch 'testing'
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git commit -a -m 'made a change'
+[?2004lOn branch testing
+nothing to commit, working tree clean
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git commit -a -m 'made a change'[12Pheckout testing[K[K[K[K[K[K[Kmaster
+[?2004lerror: pathspec 'master' did not match any file(s) known to git
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git cge[K[K[Kstatus
+[?2004lOn branch testing
+nothing to commit, working tree clean
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git statuscheckout master[K[K[K[Kin
+[?2004lSwitched to branch 'main'
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git checkout -b iss53
+[?2004lSwitched to a new branch 'iss53'
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git merge iss53
+[?2004lAlready up to date.
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git checkout [K an[K[Kmain
+[?2004lM	trial.docx
+Switched to branch 'main'
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git commut [K[K[Kit -m "hey"
+[?2004lOn branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   trial.docx[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git commit -m "hey"[2Pheckout main[2Pmerge iss53
+[?2004lAlready up to date.
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git branhc
+[?2004lgit: 'branhc' is not a git command. See 'git --help'.
+
+The most similar command is
+	branch
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git branhc[K[Kch
+[?2004l[?1h=  iss53[m[m
+* [32mmain[m[m
+  testing[m[m
+[K[?1l>[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git branch -v
+[?2004l[?1h=  iss53  [m fe043d1 all commit[m
+* [32mmain   [m fe043d1 all commit[m
+  testing[m fe043d1 all commit[m
+[K[?1l>[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git branch --merged
+[?2004l[?1h=  iss53[m[m
+* [32mmain[m[m
+  testing[m[m
+[K[?1l>[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git branch --no-merged
+[?2004l[?1h=[K[?1l>[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git branch -d testing
+[?2004lDeleted branch testing (was fe043d1).
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git branhc [K[K[Kch --move abc tst[K[K[Kes[K[Ktst[K[Kesting
+[?2004lerror: refname refs/heads/abc not found
+fatal: Branch rename failed
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git branch --move abc testing[K[K[K[K[K[K[K[K[K[K[Ktestiug [K[K[Kg [K[Kng abc
+[?2004lerror: refname refs/heads/testing not found
+fatal: Branch rename failed
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git branch --move testing abc
+[?2004lerror: refname refs/heads/testing not found
+fatal: Branch rename failed
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git branch --move testing abcabc testing[8Pd[C[C[C[C[C[C[C[C-no-merged[3Pmergedv[K[Khcmerge iss53commit -m "hey"[2Pheckout main[2Pmerge iss53[6@checkout -b[C[C[C[C[C[C[4Pmain[7Pstatuscheckout master[9Pstatus
+[?2004lOn branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   trial.docx[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git branch
+[?2004l[?1h=  iss53[m[m
+* [32mmain[m[m
+[K[?1l>[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git branch --o[Kmove iss53 try[K[K[Knewnam[K[Kame
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git push --set-upstream origin corrected-branch-name[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Knewname
+[?2004lfatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git push origin master
+[?2004lerror: src refspec master does not match any
+[31merror: failed to push some refs to 'origin'
+[m[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git push origin master
+[?2004lerror: src refspec master does not match any
+[31merror: failed to push some refs to 'origin'
+[m[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git remote -v
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git remote add origin https://github.com/repo.git
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git remote add origin https://github.com/ankitawadh/13-01-23.git
+[?2004lerror: remote origin already exists.
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git push origin master
+[?2004lerror: src refspec master does not match any
+[31merror: failed to push some refs to 'https://github.com/repo.git'
+[m[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git push origin master
+[?2004lerror: src refspec master does not match any
+[31merror: failed to push some refs to 'https://github.com/repo.git'
+[m[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git push origin master
+[?2004lerror: src refspec master does not match any
+[31merror: failed to push some refs to 'https://github.com/repo.git'
+[m[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git ls-remote <remote>,
+[?2004lbash: remote: No such file or directory
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git ls-remote <remote>,[K[K[K[K[K[K[K[K[Khttps://github.com/ankitawadh/13-01-23.git
+[?2004lUsername for 'https://github.com': ankitawadh
+Password for 'https://ankitawadh@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/ankitawadh/13-01-23.git/'
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ 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[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgit ls-remote https://github.com/ankitawadh/13-01-23.git
+[?2004lUsername for 'https://github.com': ankitawd adh
+Password for 'https://ankitawadh@github.com': 
+d577fc2e4ef88b0dfb422847e7d52b0c460f71ef	HEAD
+d577fc2e4ef88b0dfb422847e7d52b0c460f71ef	refs/heads/main
+1d294342c237f549c820f7f12649915691ff2344	refs/heads/origin
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ git sa[Ktautu[K[K[Ktus
+[?2004lOn branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   trial.docx[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ gt [K[Kit clone https://github.com/ankitawadh/sanctum-tokens.git
+[?2004lCloning into 'sanctum-tokens'...
+remote: Enumerating objects: 514, done.[K
+remote: Counting objects:   0% (1/112)[Kremote: Counting objects:   1% (2/112)[Kremote: Counting objects:   2% (3/112)[Kremote: Counting objects:   3% (4/112)[Kremote: Counting objects:   4% (5/112)[Kremote: Counting objects:   5% (6/112)[Kremote: Counting objects:   6% (7/112)[Kremote: Counting objects:   7% (8/112)[Kremote: Counting objects:   8% (9/112)[Kremote: Counting objects:   9% (11/112)[Kremote: Counting objects:  10% (12/112)[Kremote: Counting objects:  11% (13/112)[Kremote: Counting objects:  12% (14/112)[Kremote: Counting objects:  13% (15/112)[Kremote: Counting objects:  14% (16/112)[Kremote: Counting objects:  15% (17/112)[Kremote: Counting objects:  16% (18/112)[Kremote: Counting objects:  17% (20/112)[Kremote: Counting objects:  18% (21/112)[Kremote: Counting objects:  19% (22/112)[Kremote: Counting objects:  20% (23/112)[Kremote: Counting objects:  21% (24/112)[Kremote: Counting objects:  22% (25/112)[Kremote: Counting objects:  23% (26/112)[Kremote: Counting objects:  24% (27/112)[Kremote: Counting objects:  25% (28/112)[Kremote: Counting objects:  26% (30/112)[Kremote: Counting objects:  27% (31/112)[Kremote: Counting objects:  28% (32/112)[Kremote: Counting objects:  29% (33/112)[Kremote: Counting objects:  30% (34/112)[Kremote: Counting objects:  31% (35/112)[Kremote: Counting objects:  32% (36/112)[Kremote: Counting objects:  33% (37/112)[Kremote: Counting objects:  34% (39/112)[Kremote: Counting objects:  35% (40/112)[Kremote: Counting objects:  36% (41/112)[Kremote: Counting objects:  37% (42/112)[Kremote: Counting objects:  38% (43/112)[Kremote: Counting objects:  39% (44/112)[Kremote: Counting objects:  40% (45/112)[Kremote: Counting objects:  41% (46/112)[Kremote: Counting objects:  42% (48/112)[Kremote: Counting objects:  43% (49/112)[Kremote: Counting objects:  44% (50/112)[Kremote: Counting objects:  45% (51/112)[Kremote: Counting objects:  46% (52/112)[Kremote: Counting objects:  47% (53/112)[Kremote: Counting objects:  48% (54/112)[Kremote: Counting objects:  49% (55/112)[Kremote: Counting objects:  50% (56/112)[Kremote: Counting objects:  51% (58/112)[Kremote: Counting objects:  52% (59/112)[Kremote: Counting objects:  53% (60/112)[Kremote: Counting objects:  54% (61/112)[Kremote: Counting objects:  55% (62/112)[Kremote: Counting objects:  56% (63/112)[Kremote: Counting objects:  57% (64/112)[Kremote: Counting objects:  58% (65/112)[Kremote: Counting objects:  59% (67/112)[Kremote: Counting objects:  60% (68/112)[Kremote: Counting objects:  61% (69/112)[Kremote: Counting objects:  62% (70/112)[Kremote: Counting objects:  63% (71/112)[Kremote: Counting objects:  64% (72/112)[Kremote: Counting objects:  65% (73/112)[Kremote: Counting objects:  66% (74/112)[Kremote: Counting objects:  67% (76/112)[Kremote: Counting objects:  68% (77/112)[Kremote: Counting objects:  69% (78/112)[Kremote: Counting objects:  70% (79/112)[Kremote: Counting objects:  71% (80/112)[Kremote: Counting objects:  72% (81/112)[Kremote: Counting objects:  73% (82/112)[Kremote: Counting objects:  74% (83/112)[Kremote: Counting objects:  75% (84/112)[Kremote: Counting objects:  76% (86/112)[Kremote: Counting objects:  77% (87/112)[Kremote: Counting objects:  78% (88/112)[Kremote: Counting objects:  79% (89/112)[Kremote: Counting objects:  80% (90/112)[Kremote: Counting objects:  81% (91/112)[Kremote: Counting objects:  82% (92/112)[Kremote: Counting objects:  83% (93/112)[Kremote: Counting objects:  84% (95/112)[Kremote: Counting objects:  85% (96/112)[Kremote: Counting objects:  86% (97/112)[Kremote: Counting objects:  87% (98/112)[Kremote: Counting objects:  88% (99/112)[Kremote: Counting objects:  89% (100/112)[Kremote: Counting objects:  90% (101/112)[Kremote: Counting objects:  91% (102/112)[Kremote: Counting objects:  92% (104/112)[Kremote: Counting objects:  93% (105/112)[Kremote: Counting objects:  94% (106/112)[Kremote: Counting objects:  95% (107/112)[Kremote: Counting objects:  96% (108/112)[Kremote: Counting objects:  97% (109/112)[Kremote: Counting objects:  98% (110/112)[Kremote: Counting objects:  99% (111/112)[Kremote: Counting objects: 100% (112/112)[Kremote: Counting objects: 100% (112/112), done.[K
+remote: Compressing objects:   1% (1/58)[Kremote: Compressing objects:   3% (2/58)[Kremote: Compressing objects:   5% (3/58)[Kremote: Compressing objects:   6% (4/58)[Kremote: Compressing objects:   8% (5/58)[Kremote: Compressing objects:  10% (6/58)[Kremote: Compressing objects:  12% (7/58)[Kremote: Compressing objects:  13% (8/58)[Kremote: Compressing objects:  15% (9/58)[Kremote: Compressing objects:  17% (10/58)[Kremote: Compressing objects:  18% (11/58)[Kremote: Compressing objects:  20% (12/58)[Kremote: Compressing objects:  22% (13/58)[Kremote: Compressing objects:  24% (14/58)[Kremote: Compressing objects:  25% (15/58)[Kremote: Compressing objects:  27% (16/58)[Kremote: Compressing objects:  29% (17/58)[Kremote: Compressing objects:  31% (18/58)[Kremote: Compressing objects:  32% (19/58)[Kremote: Compressing objects:  34% (20/58)[Kremote: Compressing objects:  36% (21/58)[Kremote: Compressing objects:  37% (22/58)[Kremote: Compressing objects:  39% (23/58)[Kremote: Compressing objects:  41% (24/58)[Kremote: Compressing objects:  43% (25/58)[Kremote: Compressing objects:  44% (26/58)[Kremote: Compressing objects:  46% (27/58)[Kremote: Compressing objects:  48% (28/58)[Kremote: Compressing objects:  50% (29/58)[Kremote: Compressing objects:  51% (30/58)[Kremote: Compressing objects:  53% (31/58)[Kremote: Compressing objects:  55% (32/58)[Kremote: Compressing objects:  56% (33/58)[Kremote: Compressing objects:  58% (34/58)[Kremote: Compressing objects:  60% (35/58)[Kremote: Compressing objects:  62% (36/58)[Kremote: Compressing objects:  63% (37/58)[Kremote: Compressing objects:  65% (38/58)[Kremote: Compressing objects:  67% (39/58)[Kremote: Compressing objects:  68% (40/58)[Kremote: Compressing objects:  70% (41/58)[Kremote: Compressing objects:  72% (42/58)[Kremote: Compressing objects:  74% (43/58)[Kremote: Compressing objects:  75% (44/58)[Kremote: Compressing objects:  77% (45/58)[Kremote: Compressing objects:  79% (46/58)[Kremote: Compressing objects:  81% (47/58)[Kremote: Compressing objects:  82% (48/58)[Kremote: Compressing objects:  84% (49/58)[Kremote: Compressing objects:  86% (50/58)[Kremote: Compressing objects:  87% (51/58)[Kremote: Compressing objects:  89% (52/58)[Kremote: Compressing objects:  91% (53/58)[Kremote: Compressing objects:  93% (54/58)[Kremote: Compressing objects:  94% (55/58)[Kremote: Compressing objects:  96% (56/58)[Kremote: Compressing objects:  98% (57/58)[Kremote: Compressing objects: 100% (58/58)[Kremote: Compressing objects: 100% (58/58), done.[K
+Receiving objects:   0% (1/514)Receiving objects:   1% (6/514)Receiving objects:   2% (11/514)Receiving objects:   3% (16/514)Receiving objects:   4% (21/514)Receiving objects:   5% (26/514)Receiving objects:   6% (31/514)Receiving objects:   7% (36/514)Receiving objects:   8% (42/514)Receiving objects:   9% (47/514)Receiving objects:  10% (52/514)Receiving objects:  11% (57/514)Receiving objects:  12% (62/514)Receiving objects:  13% (67/514)Receiving objects:  14% (72/514)Receiving objects:  15% (78/514)Receiving objects:  16% (83/514)Receiving objects:  17% (88/514)Receiving objects:  18% (93/514)Receiving objects:  19% (98/514)Receiving objects:  20% (103/514)Receiving objects:  21% (108/514)Receiving objects:  22% (114/514)Receiving objects:  23% (119/514)Receiving objects:  24% (124/514)Receiving objects:  25% (129/514)Receiving objects:  26% (134/514)Receiving objects:  27% (139/514)Receiving objects:  28% (144/514)Receiving objects:  29% (150/514)Receiving objects:  30% (155/514)Receiving objects:  31% (160/514)Receiving objects:  32% (165/514)Receiving objects:  33% (170/514)Receiving objects:  34% (175/514)Receiving objects:  35% (180/514)Receiving objects:  36% (186/514)Receiving objects:  37% (191/514)Receiving objects:  38% (196/514)Receiving objects:  39% (201/514)Receiving objects:  40% (206/514)Receiving objects:  41% (211/514)Receiving objects:  42% (216/514)Receiving objects:  43% (222/514)Receiving objects:  44% (227/514)Receiving objects:  45% (232/514)Receiving objects:  46% (237/514)Receiving objects:  47% (242/514)Receiving objects:  48% (247/514)Receiving objects:  49% (252/514)Receiving objects:  50% (257/514)Receiving objects:  51% (263/514)Receiving objects:  52% (268/514)Receiving objects:  53% (273/514)Receiving objects:  54% (278/514)Receiving objects:  55% (283/514)Receiving objects:  56% (288/514)Receiving objects:  57% (293/514)Receiving objects:  58% (299/514)Receiving objects:  59% (304/514)Receiving objects:  60% (309/514)Receiving objects:  61% (314/514)Receiving objects:  62% (319/514)Receiving objects:  63% (324/514)Receiving objects:  64% (329/514)Receiving objects:  65% (335/514)Receiving objects:  66% (340/514)Receiving objects:  67% (345/514)Receiving objects:  68% (350/514)Receiving objects:  69% (355/514)Receiving objects:  70% (360/514)Receiving objects:  71% (365/514)Receiving objects:  72% (371/514)Receiving objects:  73% (376/514)Receiving objects:  74% (381/514)Receiving objects:  75% (386/514)Receiving objects:  76% (391/514)Receiving objects:  77% (396/514)Receiving objects:  78% (401/514)Receiving objects:  79% (407/514)Receiving objects:  80% (412/514)Receiving objects:  81% (417/514)Receiving objects:  82% (422/514)Receiving objects:  83% (427/514)Receiving objects:  84% (432/514)Receiving objects:  85% (437/514)Receiving objects:  86% (443/514)Receiving objects:  87% (448/514)Receiving objects:  88% (453/514)Receiving objects:  89% (458/514)Receiving objects:  90% (463/514)Receiving objects:  91% (468/514)Receiving objects:  92% (473/514)Receiving objects:  93% (479/514)Receiving objects:  94% (484/514)Receiving objects:  95% (489/514)Receiving objects:  96% (494/514)Receiving objects:  97% (499/514)Receiving objects:  98% (504/514)remote: Total 514 (delta 57), reused 96 (delta 47), pack-reused 402[K
+Receiving objects:  99% (509/514)Receiving objects: 100% (514/514)Receiving objects: 100% (514/514), 880.25 KiB | 3.18 MiB/s, done.
+Resolving deltas:   0% (0/258)Resolving deltas:   1% (3/258)Resolving deltas:   2% (6/258)Resolving deltas:   3% (8/258)Resolving deltas:   4% (11/258)Resolving deltas:   5% (13/258)Resolving deltas:   6% (16/258)Resolving deltas:   7% (19/258)Resolving deltas:   8% (21/258)Resolving deltas:   9% (24/258)Resolving deltas:  10% (26/258)Resolving deltas:  11% (29/258)Resolving deltas:  12% (31/258)Resolving deltas:  13% (34/258)Resolving deltas:  14% (37/258)Resolving deltas:  15% (39/258)Resolving deltas:  16% (42/258)Resolving deltas:  17% (44/258)Resolving deltas:  18% (47/258)Resolving deltas:  19% (50/258)Resolving deltas:  20% (52/258)Resolving deltas:  21% (55/258)Resolving deltas:  22% (57/258)Resolving deltas:  23% (60/258)Resolving deltas:  24% (62/258)Resolving deltas:  25% (65/258)Resolving deltas:  26% (68/258)Resolving deltas:  27% (70/258)Resolving deltas:  28% (73/258)Resolving deltas:  29% (75/258)Resolving deltas:  30% (78/258)Resolving deltas:  31% (80/258)Resolving deltas:  32% (83/258)Resolving deltas:  33% (86/258)Resolving deltas:  34% (88/258)Resolving deltas:  35% (91/258)Resolving deltas:  36% (93/258)Resolving deltas:  37% (96/258)Resolving deltas:  38% (99/258)Resolving deltas:  39% (101/258)Resolving deltas:  40% (104/258)Resolving deltas:  41% (106/258)Resolving deltas:  42% (109/258)Resolving deltas:  43% (111/258)Resolving deltas:  44% (114/258)Resolving deltas:  45% (117/258)Resolving deltas:  46% (119/258)Resolving deltas:  47% (122/258)Resolving deltas:  48% (124/258)Resolving deltas:  49% (127/258)Resolving deltas:  50% (129/258)Resolving deltas:  51% (132/258)Resolving deltas:  52% (135/258)Resolving deltas:  53% (137/258)Resolving deltas:  54% (140/258)Resolving deltas:  55% (142/258)Resolving deltas:  56% (145/258)Resolving deltas:  57% (148/258)Resolving deltas:  58% (150/258)Resolving deltas:  59% (153/258)Resolving deltas:  60% (155/258)Resolving deltas:  61% (158/258)Resolving deltas:  62% (160/258)Resolving deltas:  63% (163/258)Resolving deltas:  64% (166/258)Resolving deltas:  65% (168/258)Resolving deltas:  66% (171/258)Resolving deltas:  67% (173/258)Resolving deltas:  68% (176/258)Resolving deltas:  69% (179/258)Resolving deltas:  70% (181/258)Resolving deltas:  71% (184/258)Resolving deltas:  72% (186/258)Resolving deltas:  73% (189/258)Resolving deltas:  74% (191/258)Resolving deltas:  75% (194/258)Resolving deltas:  76% (197/258)Resolving deltas:  77% (199/258)Resolving deltas:  78% (202/258)Resolving deltas:  79% (204/258)Resolving deltas:  80% (207/258)Resolving deltas:  81% (209/258)Resolving deltas:  82% (212/258)Resolving deltas:  83% (215/258)Resolving deltas:  84% (217/258)Resolving deltas:  85% (220/258)Resolving deltas:  86% (222/258)Resolving deltas:  87% (225/258)Resolving deltas:  88% (228/258)Resolving deltas:  89% (230/258)Resolving deltas:  90% (233/258)Resolving deltas:  91% (235/258)Resolving deltas:  92% (238/258)Resolving deltas:  93% (240/258)Resolving deltas:  94% (243/258)Resolving deltas:  95% (246/258)Resolving deltas:  96% (248/258)Resolving deltas:  97% (251/258)Resolving deltas:  98% (253/258)Resolving deltas:  99% (256/258)Resolving deltas: 100% (258/258)Resolving deltas: 100% (258/258), done.
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ cd blink
+[?2004lbash: cd: blink: No such file or directory
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ cd sanctun-tokens
+[?2004lbash: cd: sanctun-tokens: No such file or directory
+[?2004h]0;ankita@TIGER02476: ~/my_project[01;32mankita@TIGER02476[00m:[01;34m~/my_project[00m$ cd sanctun-tokens[1P-tokensm-tokens
+[?2004l[?2004h]0;ankita@TIGER02476: ~/my_project/sanctum-tokens[01;32mankita@TIGER02476[00m:[01;34m~/my_project/sanctum-tokens[00m$ git checkout -b slow-blink
+[?2004lSwitched to a new branch 'slow-blink'
+[?2004h]0;ankita@TIGER02476: ~/my_project/sanctum-tokens[01;32mankita@TIGER02476[00m:[01;34m~/my_project/sanctum-tokens[00m$ git diff --word-diff
+[?2004l[?1h=[K[?1l>[?2004h]0;ankita@TIGER02476: ~/my_project/sanctum-tokens[01;32mankita@TIGER02476[00m:[01;34m~/my_project/sanctum-tokens[00m$ git push origin slow-blink
+[?2004lUsername for 'https://github.com': ankitawadh
+Password for 'https://ankitawadh@github.com': 
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'slow-blink' on GitHub by visiting:[K
+remote:      https://github.com/ankitawadh/sanctum-tokens/pull/new/slow-blink[K
+remote: 
+To https://github.com/ankitawadh/sanctum-tokens.git
+ * [new branch]      slow-blink -> slow-blink
+[?2004h]0;ankita@TIGER02476: ~/my_project/sanctum-tokens[01;32mankita@TIGER02476[00m:[01;34m~/my_project/sanctum-tokens[00m$ QUIT
+[?2004lQUIT: command not found
+[?2004h]0;ankita@TIGER02476: ~/my_project/sanctum-tokens[01;32mankita@TIGER02476[00m:[01;34m~/my_project/sanctum-tokens[00m$ E[Kexit
+[?2004lexit
+
+Script done on 2023-02-27 10:54:23+05:30 [COMMAND_EXIT_CODE="127"]
